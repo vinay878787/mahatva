@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Register</h1>
+    <div class="box">
+        <div class="form">
+            <h2>Login Form</h2>
+            <form>
+                
+                <div class="inputbox">
+                    <input type="text" value="" id="collegeName" required>
+                    <span>College Name</span>
+                </div>
+                
+                <div class="inputbox">
+                    <input type="text" value="" id="faculty1" placeholder="faculty 1..... " required>
+                    <span>Faculty Names</span>
+                    <input type="text" value="" id="faculty2" placeholder="faculty 2..... " required>
+                </div>
+                
+                <div class="inputbox">
+                    <input type="text" value="" id="phone" required>
+                    <span>Phone Number</span>
+                </div>
+                
+                <div class="inputbox">
+                    <input type="text" value="" id="finvestars1" placeholder="participant name 1" required>
+                    <span>finvestars</span>
+                    <input type="text" value="" id="finvestars2" placeholder="participant name 2" required>
+                </div>
+                
+                <div class="inputbox">
+                    <input type="text" value="" id="Apskaita1" placeholder="participant name 1" required>
+                    <span>Apskaita</span>
+                    <input type="text" value="" id="Apskaita2" placeholder="participant name 2" required>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" value="" id="krita1" placeholder="participant name 1" required>
+                    <span>krita</span>
+                    <input type="text" value="" id="krita2" placeholder="participant name 2" required>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" value="" id="examen1" placeholder="participant name 1" required>
+                    <span>business examen</span>
+                    <input type="text" value="" id="examen2" placeholder="participant name 2" required>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" value="" id="sutantra1" placeholder="participant name 1" required>
+                    <span>Sutantra</span>
+                    <input type="text" value="" id="sutantra2" placeholder="participant name 2" required>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" value="" id="utkarsh1" placeholder="participant name 1" required>
+                    <span>Utkarsh</span>
+                    <input type="text" value="" id="utkarsh2" placeholder="participant name 2" required>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" value="" id="marketing1" placeholder="participant name 1" required>
+                    <span>Marketing magicians</span>
+                    <input type="text" value="" id="marketing2" placeholder="participant name 2" required>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" value="" id="vriddhi1" placeholder="participant name 1" required>
+                    <span>Vriddhi</span>
+                    <input type="text" value="" id="vriddhi2" placeholder="participant name 2" required>
+                </div>
+
+                <div class="inputbox">
+                    <input type="text" value="" id="gala1" placeholder="participant name 1" required>
+                    <input type="text" value="" id="gala2" placeholder="participant name 2" required>
+                    <input type="text" value="" id="gala3" placeholder="participant name 3" required>
+                    <span>Folk Rhythm gala</span>
+                    <input type="text" value="" id="gala4" placeholder="participant name 4" required>
+                    <input type="text" value="" id="gala5" placeholder="participant name 5" >
+                    <input type="text" value="" id="gala6" placeholder="participant name 6" >
+                </div>
+
+                <input type="submit" value="submit" class="sub" id="submit">
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+        import { getDatabase,ref,set,get,child } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDfcLCvpto1LM9b68olcVg7eZFUZRC2zjM",
+          authDomain: "mahatva2023.firebaseapp.com",
+          projectId: "mahatva2023",
+          storageBucket: "mahatva2023.appspot.com",
+          messagingSenderId: "269167585175",
+          appId: "1:269167585175:web:422e589ca1bc589236c6d2"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    
+  
+  //get ref to database services
+         const db = getDatabase(app);
+  
+         document.getElementById("submit").addEventListener('click', function(e){
+          e.preventDefault();
+          set(ref(db, 'user/' + document.getElementById("collegeName").value),
+          {
+  
+            collegeName: document.getElementById("collegeName").value,
+            faculty1: document.getElementById("faculty1").value,
+            faculty2: document.getElementById("faculty2").value,
+            PhoneNumber: document.getElementById("phone").value,
+            finvestars1: document.getElementById("finvestars1").value,
+            finvestars2: document.getElementById("finvestars2").value,
+            apskaita1: document.getElementById("Apskaita1").value,
+            apskaita2: document.getElementById("Apskaita2").value,
+            krita1: document.getElementById("krita1").value,
+            krita2: document.getElementById("krita2").value,
+            businessExamen1: document.getElementById("examen1").value,
+            businessExamen2: document.getElementById("examen2").value,
+            Sutantra1: document.getElementById("sutantra1").value,
+            Sutantra2: document.getElementById("sutantra2").value,
+            utkarsh1: document.getElementById("utkarsh1").value,
+            utkarsh2: document.getElementById("utkarsh2").value,
+            marketingMagicinas1: document.getElementById("marketing1").value,
+            marketingMagicinas2: document.getElementById("marketing2").value,
+            Vriddhi1: document.getElementById("vriddhi1").value,
+            Vriddhi2: document.getElementById("vriddhi2").value,
+            folkRhythm1: document.getElementById("gala1").value,
+            folkRhythm2: document.getElementById("gala2").value,
+            folkRhythm3: document.getElementById("gala3").value,
+            folkRhythm4: document.getElementById("gala4").value,
+            folkRhythm5: document.getElementById("gala5").value,
+            folkRhythm6: document.getElementById("gala6").value,
+  
+          });
+            alert("Login Sucessfull  !");
+         })
+    </script>
+</body>
+</html>
