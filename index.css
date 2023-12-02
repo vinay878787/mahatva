@@ -109,6 +109,7 @@
 .footer{
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   background-color: #00000040;
   color: #fff;
   padding: 10px;
@@ -135,97 +136,65 @@
   
 }
 
-
-.box
-{
-    padding: 20px 30px;
-    width: 300px;
-    height: 265vh;
-    backdrop-filter: blur(50px);
-    border-radius: 5px;
-    background: rgba(49, 49, 49, .2);
-    border: 1px solid rgba(255, 255, 255, .5);
-    margin:0 auto;
-}
-.box .form
-{
-    padding: 10px 20px;
-}
-.box .form h2
-{
-    text-align: center;
-    color: #fff;
-}
-.box .form form
-{
-    margin-top: 50px;
-    align-items: center;
-}
-.box .form form .inputbox input
-{
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    background: none;
-    border-bottom: 1px solid #12151e;
-    margin-bottom: 30px;
-    color: #fff;
-}
-.box .form form .inputbox span
-{
-    position: absolute;
-    transform: translateY(-80px);
-    font-size: 14px;
-    color: #fff;
-}
-.box .form form .sub
-{
-    padding: 10px 20px;
-    color: #fff;
-    border: none;
-    outline: none;
-    background: #0cc0df;
-    cursor: pointer;
-    font-size: 16px;
-    
+.box {
+  width: 80%; /* Use percentage for responsiveness */
+  max-width: 400px; /* Set a maximum width for larger screens */
+  margin: 0 auto;
+  padding: 1rem;
+  background: linear-gradient(to right, red, blue);
 }
 
+.inputbox {
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.inputbox input {
+  width: 100%; /* Use 100% width to fill the container */
+  padding: 8px;
+  margin: 5px;
+}
+.btn-submit{
+  width:100%;
+  display: flex;
+  justify-content: center;
+}
+.sub{
+  width:25%;
+  padding: 10px;
+  background-color: aqua;
+  border-radius: 10%;
 
-@media screen and (min-width: 600px) {
-  .container-event-goals {
-    flex-direction: row;
+  
+}
+.register-heading{
+  text-align: center;
+}
+/* Media Query for Responsive Design */
+@media (min-width: 600px) {
+  .box {
+    width: 60%;
   }
-
-  .goal1,
-  .goal2,
-  .goal3 {
-    width: calc(33.33% - 20px);
-    margin-right: 20px;
+  
+}
+@media(max-width:500px){
+  .container-contact{
+    flex-direction: column;
   }
-
-  .goal3 {
-    margin-right: 0;
-  }
-
-  .event-goal-heading {
-    font-size: 1.2vw;
-  }
+.map{
+  width:280px;
+}
 }
 
-@media screen and (min-width: 900px) {
-  .goal1,
-  .goal2,
-  .goal3 {
-    width: calc(33.33% - 30px);
-    margin-right: 30px;
-  }
 
-  .goal3 {
-    margin-right: 0;
-  }
 
-  .event-goal-heading {
-    font-size: 1.1vw; /* Further adjust font size for even larger screens */
-  }
-}
+
+
+
+
+
+
+
+
